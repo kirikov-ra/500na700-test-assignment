@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --color-white: #FFFFFF;
+    --color-black: #0F0F17;
+    --color-gradient-start: #FB8627;
+    --color-gradient-end: #F5BEF6;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    line-height: 1.5;
+    min-height: 100vh;
+}
