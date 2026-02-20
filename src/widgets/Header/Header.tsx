@@ -1,18 +1,22 @@
 import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
+import { Button } from '@/shared/ui/Button/Button';
+import { useState } from 'react';
 
 export const Header = () => {
+    const [openModal, setOpenModal] = useState(false);
+
     return (
         <header className={styles.header}>
             <Link to="/" className={styles.logo}>
                 <img src="/icon.svg" alt="Логотип компании"/>
             </Link>
-            <button 
-                className={styles.button} 
-                aria-label="Открыть форму контактов"
+            <Button 
+                ariaLabel="Открыть форму контактов"
+                onClick={setOpenModal}
             >
-                <span className={styles.text}>Связаться с нами</span>
-            </button>
+                Связаться с нами
+            </Button>
         </header>
     );
 };

@@ -1,0 +1,27 @@
+@use '@/app/styles/global' as *;
+
+.button {
+    position: relative;
+    border-radius: 40px;
+    border: none;
+    background: linear-gradient(0, $color-gradient-start, $color-gradient-end);
+    cursor: pointer;
+
+    .text {
+        display: block;
+        border-radius: 40px;
+        background: $color-black;
+        color: $color-white;
+        padding: 12px 20px;
+        margin: 1px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 130%;
+    }
+
+    &:hover .text,
+    &:active .text,
+    &:focus-visible .text {
+        background: transparent;
+    }
+}
