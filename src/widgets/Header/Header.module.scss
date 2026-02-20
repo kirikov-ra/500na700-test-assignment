@@ -5,25 +5,39 @@
     top: 0;
     left: 0;
     right: 0;
-    min-height: 119px;
     border-bottom: 1px solid #ffffff30;
     z-index: 100;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 10px;
-    grid-column: span 6;
-    padding: 0 $space-4;
     background-color: $color-black;
+    min-height: 119px;
+    
+    .nav {
+        padding: 0 $space-4;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1440px;
 
-    @media (max-width: 320px) {
-        padding: 0 $space-1;
+        @media (max-width: 320px) {
+            padding: 0 $space-1;
+        }
+        
+        .logo {
+            width: 70px;
+            height: 84px;
+
+            @media (max-width: 320px) {
+                width: 44px;
+                height: 53px;
+            }
+        }
     }
 
-    .logo {
-        width: 70px;
-        height: 84px;
-    }
+    
+    
 }
 
 

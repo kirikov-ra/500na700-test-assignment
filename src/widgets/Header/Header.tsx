@@ -8,15 +8,17 @@ export const Header = () => {
 
     return (
         <header className={styles.header}>
-            <Link to="/" className={styles.logo}>
-                <img src="/icon.svg" alt="Логотип компании"/>
-            </Link>
-            <Button 
-                ariaLabel="Открыть форму контактов"
-                onClick={setOpenModal}
-            >
-                Связаться с нами
-            </Button>
+            <nav className={styles.nav}>
+                <Link to="/" className={styles.logo}>
+                    <img src="/icon.svg" alt="Логотип компании"/>
+                </Link>
+                <Button 
+                    ariaLabel="Открыть форму контактов"
+                    onClick={setOpenModal}
+                >
+                    Связаться с нами
+                </Button>
+            </nav>
         </header>
     );
 };
