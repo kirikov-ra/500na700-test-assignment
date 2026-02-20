@@ -1,0 +1,56 @@
+@use '@/app/styles/global' as *;
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 119px;
+    border-bottom: 1px solid #ffffff30;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    grid-column: span 6;
+    padding: 0 $space-4;
+
+    @media (max-width: 320px) {
+        padding: 0 $space-1;
+    }
+
+    .logo {
+        width: 70px;
+        height: 84px;
+    }
+
+    .button {
+        position: relative;
+        border-radius: 40px;
+        border: none;
+        background: linear-gradient(0, $color-gradient-start, $color-gradient-end);
+        cursor: pointer;
+
+        .text {
+            display: block;
+            border-radius: 40px;
+            background: $color-black;
+            color: $color-white;
+            padding: 12px 20px;
+            margin: 1px;
+            font-size: 16px;
+            font-weight: 500;
+            line-height:130%;
+        }
+
+        &:hover .text,
+        &:active .text,
+        &:focus-visible .text {
+            background: transparent;
+        }
+    }
+}
+
+
+
+
