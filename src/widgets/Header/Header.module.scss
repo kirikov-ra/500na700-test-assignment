@@ -21,7 +21,7 @@
         width: 100%;
         max-width: 1440px;
 
-        @media (max-width: 320px) {
+        @media (max-width: 425px) {
             padding: 0 $space-1;
         }
         
@@ -29,15 +29,12 @@
             width: 70px;
             height: 84px;
 
-            @media (max-width: 320px) {
+            @media (max-width: 425px) {
                 width: 44px;
                 height: 53px;
             }
         }
     }
-
-    
-    
 }
 
 

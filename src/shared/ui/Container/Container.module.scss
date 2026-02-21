@@ -6,7 +6,7 @@
     margin: 0 auto;
     padding: 0 $space-4;
 
-    @media (max-width: 320px) {
+    @media (max-width: 425px) {
         padding: 0;
         grid-template-columns: repeat(1, 1fr);
     }
