@@ -1,29 +1,11 @@
-import { getNews } from '@/entities/news/api';
-import { NewsItem } from '@/entities/news/types';
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Container } from '@/shared/ui/Container/Container';
 import styles from './NewsPage.module.scss';
 import { NewsCardSkeleton } from '@/entities/news/ui/NewsCardSkeleton/NewsCardSkeleton';
+import { useNews } from '@/shared/hooks/useNews';
 
 export const NewsPage = () => {
-  const [news, setNews] = useState<NewsItem[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const data = await getNews();
-        setNews(data);
-      } catch (err) {
-        setError((err as Error).message);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchNews();
-  }, []);
+  const { data: news, isLoading: loading, error } = useNews();
 
   if (error)
     return (

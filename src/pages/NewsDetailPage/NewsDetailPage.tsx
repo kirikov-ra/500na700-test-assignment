@@ -1,42 +1,13 @@
 import { useParams, Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { getNewsById } from '@/entities/news/api';
-import { NewsItem } from '@/entities/news/types';
 import { Container } from '@/shared/ui/Container/Container';
 import { NewsDetailSkeleton } from '@/entities/news/ui/NewsDetailSkeleton/NewsDetailSkeleton';
 import styles from './NewsDetailPage.module.scss';
+import { useNewsDetail } from '@/shared/hooks/useNewsDetail';
 
 export const NewsDetailPage = () => {
   const { id } = useParams<{ id: string }>();
 
-  const [newItem, setNewItem] = useState<NewsItem | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!id) {
-      setError('ID новости не указан');
-      setLoading(false);
-      return;
-    }
-
-    const controller = new AbortController();
-
-    const fetchNews = async () => {
-      setLoading(true);
-      try {
-        const data = await getNewsById(id!);
-        setNewItem(data);
-      } catch (err) {
-        setError((err as Error).message);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchNews();
-
-    return () => controller.abort();
-  }, [id]);
+  const { item: newItem, isLoading: loading, error } = useNewsDetail(id);
 
   if (error) {
     return (
