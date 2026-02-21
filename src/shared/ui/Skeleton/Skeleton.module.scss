@@ -1,0 +1,24 @@
+.skeleton {
+  background-color: #eee;
+  background-image: linear-gradient(90deg, #dfdfdf 0px, #eeeeee 40px, #dfdfdf 80px);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}
