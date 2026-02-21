@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+$color-white: #ffffff;
+$color-black: #0f0f17;
+$color-gradient-start: #f5bef6;
+$color-gradient-end: #fb8627;
+$gradient: linear-gradient(0, $color-gradient-start, $color-gradient-end);
+
+$space-1: 10px;
+$space-2: 20px;
+$space-3: 30px;
+$space-4: 40px;
+$space-5: 50px;
+$space-6: 60px;
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: $color-black;
+  color: $color-white;
+  min-height: 100vh;
+}

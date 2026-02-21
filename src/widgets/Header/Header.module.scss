@@ -1,42 +1,43 @@
-@use '@/app/styles/global' as *;
+@use '@/shared/styles/global' as *;
 
 .header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    border-bottom: 1px solid #ffffff30;
-    z-index: 100;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid #ffffff30;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: $color-black;
+  min-height: 119px;
+
+  .nav {
+    padding: 0 $space-4;
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    background-color: $color-black;
-    min-height: 119px;
-    
-    .nav {
-        padding: 0 $space-4;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        max-width: 1440px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1440px;
 
-        @media (max-width: 425px) {
-            padding: 0 $space-1;
-        }
-        
-        .logo {
-            width: 70px;
-            height: 84px;
-
-            @media (max-width: 425px) {
-                width: 44px;
-                height: 53px;
-            }
-        }
+    @media (max-width: 425px) {
+      padding: 0 $space-1;
     }
+
+    .logo {
+      width: 70px;
+      height: 84px;
+
+      @media (max-width: 425px) {
+        width: 44px;
+        height: 53px;
+      }
+
+      &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($color-gradient-start, 0.4);
+      }
+    }
+  }
 }
-
-
-
-

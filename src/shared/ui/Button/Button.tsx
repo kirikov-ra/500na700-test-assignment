@@ -1,22 +1,51 @@
-import { ReactNode } from 'react';
-import styles from './Button.module.scss';
+import { forwardRef } from 'react';
+import clsx from 'clsx';
+import styles from './button.module.scss';
 
-type ButtonProps = {
-    children: ReactNode;
-    ariaLabel: string;
-    onClick: (arg: boolean) => void;
-}
+type Color = 'white' | 'black';
+type Size = 'normal' | 'large';
 
-export const Button = ({ children, onClick, ariaLabel } : ButtonProps) => {
-  return (
-    <button 
-        className={styles.button} 
-        aria-label={ariaLabel}
-        onClick={() => onClick(true)}
-    >
-        <span className={styles.text}>
-            { children }
-        </span>
-    </button>
-  )
+type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  color?: Color;
+  size?: Size;
+  children: React.ReactNode;
+  ariaLabel?: string;
 };
+
+export const Button = forwardRef<HTMLButtonElement, Props>(
+  (
+    {
+      color = 'white',
+      size = 'normal',
+      disabled,
+      className,
+      children,
+      ariaLabel,
+      ...rest
+    },
+    ref,
+  ) => {
+    const isDisabled = disabled;
+
+    return (
+      <button
+        ref={ref}
+        type="button"
+        className={clsx(
+          styles.button,
+          styles[`button--${color}`],
+          styles[`button--${size}`],
+          className,
+        )}
+        aria-label={ariaLabel}
+        disabled={isDisabled}
+        aria-disabled={isDisabled}
+        {...rest}
+      >
+        {children}
+      </button>
+    );
+  },
+);
+
+Button.displayName = 'Button';

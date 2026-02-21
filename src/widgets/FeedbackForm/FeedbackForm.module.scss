@@ -1,0 +1,102 @@
+@use '@/shared/styles/global' as *;
+
+.wrapper {
+  .title {
+    color: $color-black;
+    font-weight: 700;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 24px;
+    line-height: 110%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: $space-4;
+  }
+
+  .success {
+    padding: 16px;
+    background-color: #dcfce7;
+    color: #166534;
+    border-radius: 6px;
+    margin-bottom: 24px;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .consentWrapper {
+    margin: 12px 0 24px;
+  }
+
+  .checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 15px;
+    color: $color-black;
+  }
+
+  .hiddenCheckbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .customCheckbox {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    background:
+      linear-gradient(#fff, #fff) padding-box,
+      $gradient border-box;
+    border: 1px solid transparent;
+    position: relative;
+    transition: all 0.25s ease;
+    margin-top: 2px;
+  }
+
+  .checkboxLabel:hover .customCheckbox {
+    transform: scale(1.05);
+  }
+
+  .customCheckbox::after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 3px;
+    width: 7px;
+    height: 12px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) scale(0);
+    opacity: 0;
+    transition: all 0.25s ease;
+  }
+
+  .checkboxLabel input:checked + .customCheckbox {
+    background:
+      $gradient padding-box,
+      $gradient border-box;
+  }
+
+  .checkboxLabel input:checked + .customCheckbox::after {
+    transform: rotate(45deg) scale(1);
+    opacity: 1;
+  }
+
+  .consentError {
+    display: block;
+    color: #ef4444;
+    font-size: 13.5px;
+    margin-top: 6px;
+    padding-left: 36px;
+  }
+}

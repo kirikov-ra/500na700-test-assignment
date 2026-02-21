@@ -1,53 +1,52 @@
-@use '@/app/styles/global' as *;
+@use '@/shared/styles/global' as *;
 
 .footer {
-    margin-top: 150px;
-    width: 100%;
-    height: 248px;
-    background: linear-gradient(0, $color-gradient-start, $color-gradient-end);
+  margin-top: 150px;
+  width: 100%;
+  height: 248px;
+  background: linear-gradient(0, $color-gradient-start, $color-gradient-end);
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 425px) {
+    align-items: center;
+    height: 431px;
+    margin-top: 80px;
+  }
+
+  .content {
     display: flex;
     align-items: center;
-    
+    justify-content: space-between;
+    gap: 30px;
+
     @media (max-width: 425px) {
-        align-items: center;
-        height: 431px;
-        margin-top: 80px;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 100px;
+      height: 431px;
     }
 
-    .content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 30px;
-        
-        @media (max-width: 425px) {
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 100px;
-            height: 431px;
-        }
+    .logo {
+      width: 103px;
+      height: 124px;
+      display: flex;
+      align-items: center;
 
-        .logo {
-            width: 103px;
-            height: 124px;
-            display: flex;
-            align-items: center;
-
-            @media (max-width: 768px) {
-                &:nth-child(3) {
-                    display: none;
-                }
-            }
+      @media (max-width: 768px) {
+        &:nth-child(3) {
+          display: none;
         }
-
-        h3 {
-            font-weight: 600;
-            font-style: SemiBold;
-            font-size: 24px;
-            line-height: 110%;
-            text-transform: uppercase;
-            text-align: center;
-        }
+      }
     }
-    
+
+    h3 {
+      font-weight: 600;
+      font-style: SemiBold;
+      font-size: 24px;
+      line-height: 110%;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
 }

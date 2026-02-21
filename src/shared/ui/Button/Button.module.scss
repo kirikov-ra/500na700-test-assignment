@@ -1,27 +1,57 @@
-@use '@/app/styles/global' as *;
+@use '@/shared/styles/global' as *;
 
 .button {
-    position: relative;
-    border-radius: 40px;
-    border: none;
-    background: linear-gradient(0, $color-gradient-start, $color-gradient-end);
-    cursor: pointer;
+  position: relative;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 130%;
+  isolation: isolate;
+  border: 1px solid transparent;
+  width: fit-content;
 
-    .text {
-        display: block;
-        border-radius: 40px;
-        background: $color-black;
-        color: $color-white;
-        padding: 12px 20px;
-        margin: 1px;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 130%;
-    }
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: $gradient;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
 
-    &:hover .text,
-    &:active .text,
-    &:focus-visible .text {
-        background: transparent;
-    }
+  &:hover::before {
+    opacity: 1;
+  }
+
+  &:active {
+    transform: scale(0.99);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($color-gradient-start, 0.4);
+  }
+}
+
+.button--white {
+  background:
+    linear-gradient(0, $color-black, $color-black) padding-box,
+    $gradient border-box;
+  color: $color-white;
+}
+
+.button--black {
+  background:
+    linear-gradient(0, $color-white, $color-white) padding-box,
+    $gradient border-box;
+  color: $color-black;
+}
+
+.button--white:hover {
+  color: $color-white;
 }
