@@ -10,10 +10,11 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <nav className={styles.nav}>
-        <Link to="/" className={styles.logo}>
+      <nav className={styles['header__nav']}>
+        <Link to="/" className={styles['header__logo']}>
           <img src="/icons/icon.svg" alt="Логотип компании" />
         </Link>
+
         <Button ariaLabel="Открыть форму контактов" onClick={() => setOpenModal(true)}>
           Связаться с нами
         </Button>

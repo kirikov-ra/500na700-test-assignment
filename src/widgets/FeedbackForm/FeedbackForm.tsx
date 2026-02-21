@@ -28,7 +28,9 @@ export const FeedbackForm = () => {
   const getValidationErrors = (): FeedbackFormErrors => {
     const newErrors: FeedbackFormErrors = {};
 
-    if (!formData.name.trim()) newErrors.name = 'Имя обязательно';
+    if (!formData.name.trim()) {
+      newErrors.name = 'Имя обязательно';
+    }
     if (!formData.email.trim()) {
       newErrors.email = 'Email обязателен';
     } else if (!isValidEmail(formData.email)) {
@@ -83,14 +85,16 @@ export const FeedbackForm = () => {
   };
 
   return (
-    <div className={styles.wrapper}>
-      <h2 className={styles.title}>Связаться с нами</h2>
+    <div className={styles['feedback-form']}>
+      <h2 className={styles['feedback-form__title']}>Связаться с нами</h2>
 
       {isSubmitted && (
-        <div className={styles.success}>Спасибо! Ваше сообщение отправлено.</div>
+        <div className={styles['feedback-form__success']}>
+          Спасибо! Ваше сообщение отправлено.
+        </div>
       )}
 
-      <form onSubmit={handleSubmit} noValidate>
+      <form className={styles['feedback-form__form']} onSubmit={handleSubmit} noValidate>
         <Input
           label="Имя"
           name="name"
@@ -115,19 +119,22 @@ export const FeedbackForm = () => {
           error={errors.email}
         />
 
-        <div className={styles.consentWrapper}>
-          <label className={styles.checkboxLabel}>
+        <div className={styles['feedback-form__consent']}>
+          <label className={styles['feedback-form__checkbox-label']}>
             <input
               type="checkbox"
               checked={formData.consent}
               onChange={handleConsentChange}
-              className={styles.hiddenCheckbox}
+              className={styles['feedback-form__checkbox-input']}
             />
-            <span className={styles.customCheckbox} />Я согласен (-а) на обработку
-            персональных данных
+            <span className={styles['feedback-form__checkbox-custom']} />Я согласен (-а)
+            на обработку персональных данных
           </label>
+
           {errors.consent && (
-            <span className={styles.consentError}>{errors.consent}</span>
+            <span className={styles['feedback-form__consent-error']}>
+              {errors.consent}
+            </span>
           )}
         </div>
 

@@ -19,16 +19,16 @@
   }
 
   .title {
-    margin-top: $space-2;
+    margin-top: space(2);
     height: 28px;
 
-    @media (max-width: 425px) {
+    @include down(sm) {
       height: 24px;
     }
   }
 
   .descWrapper {
-    margin-top: $space-1;
+    margin-top: space(1);
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -39,7 +39,7 @@
   }
 
   .date {
-    margin-top: $space-2;
+    margin-top: space(2);
     height: 16px;
   }
 }
@@ -48,6 +48,6 @@
   .title,
   .descWrapper,
   .date {
-    margin: 0 $space-1;
+    margin: 0 space(1);
   }
 }

@@ -6,12 +6,45 @@ $color-gradient-start: #f5bef6;
 $color-gradient-end: #fb8627;
 $gradient: linear-gradient(0, $color-gradient-start, $color-gradient-end);
 
-$space-1: 10px;
-$space-2: 20px;
-$space-3: 30px;
-$space-4: 40px;
-$space-5: 50px;
-$space-6: 60px;
+$space: (
+  1: 10px,
+  2: 20px,
+  3: 30px,
+  4: 40px,
+  5: 50px,
+  6: 60px,
+  7: 70px,
+  8: 80px,
+);
+
+@function space($key) {
+  @return map-get($space, $key);
+}
+
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+}
+
+$breakpoints: (
+  xs: 320px,
+  sm: 425px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1440px,
+);
+
+@mixin down($bp) {
+  @media (max-width: map-get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+%transition-default {
+  transition: 0.3s ease;
+}
 
 body {
   font-family: 'Inter', sans-serif;

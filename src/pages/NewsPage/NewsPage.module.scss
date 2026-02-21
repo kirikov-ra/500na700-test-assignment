@@ -1,47 +1,50 @@
 @use '@/shared/styles/global' as *;
 
-.container {
-  padding: $space-6 0;
+.news-page__container {
+  padding: space(6) 0;
 
-  @media (max-width: 320px) {
-    padding: $space-4 0;
+  @include down(xs) {
+    padding: space(4) 0;
   }
 
-  .pageTitle {
+  .news-page__title {
     font-weight: 600;
     font-size: 40px;
     line-height: 110%;
     text-transform: uppercase;
-    margin-bottom: $space-4;
+    margin-bottom: space(4);
 
-    @media (max-width: 320px) {
-      margin-bottom: $space-3;
-      margin-left: $space-1;
-      margin-right: $space-1;
+    @include down(xs) {
+      margin-bottom: space(3);
+      margin-left: space(1);
+      margin-right: space(1);
       font-size: 24px;
     }
   }
 
-  .news {
+  .news-page__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: space(2);
 
-    @media (max-width: 768px) {
+    @include down(lg) {
       grid-template-columns: repeat(2, 1fr);
     }
-    @media (max-width: 425px) {
+
+    @include down(md) {
       grid-template-columns: repeat(1, 1fr);
     }
 
-    .newWrapper {
-      .imageWrapper {
+    .news-page__item {
+      min-width: 240px;
+
+      .news-page__item-image-wrapper {
         position: relative;
         width: 100%;
         padding-bottom: 68.18%;
 
-        .image {
-          transition: 0.3s;
+        .news-page__item-image {
+          @extend %transition-default;
           position: absolute;
           top: 0;
           left: 0;
@@ -51,65 +54,62 @@
         }
       }
 
-      .title {
-        margin-top: $space-2;
+      .news-page__item-title {
+        margin-top: space(2);
         font-weight: 600;
         font-size: 24px;
         line-height: 130%;
         text-transform: uppercase;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        @include line-clamp(2);
 
-        @media (max-width: 425px) {
-          margin-top: $space-2;
-          margin-left: $space-1;
-          margin-right: $space-1;
+        @extend %transition-default;
+        background: $gradient;
+        background-size: 0% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        @include down(sm) {
+          margin-top: space(2);
+          margin-left: space(1);
+          margin-right: space(1);
           font-size: 20px;
         }
       }
 
-      .description {
-        margin-top: $space-1;
+      .news-page__item-description {
+        margin-top: space(1);
         font-weight: 400;
         font-size: 16px;
         line-height: 130%;
         opacity: 0.5;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        @include line-clamp(3);
 
-        @media (max-width: 425px) {
-          margin-top: $space-1;
-          margin-left: $space-1;
-          margin-right: $space-1;
+        @include down(sm) {
+          margin-top: space(1);
+          margin-left: space(1);
+          margin-right: space(1);
         }
       }
 
-      .date {
-        margin-top: $space-2;
+      .news-page__item-date {
+        margin-top: space(2);
         font-weight: 400;
         font-size: 16px;
         line-height: 130%;
 
-        @media (max-width: 425px) {
-          margin-left: $space-1;
+        @include down(sm) {
+          margin-left: space(1);
         }
       }
 
       &:hover {
-        .image {
+        .news-page__item-image {
           border-radius: 20px;
         }
 
-        .title {
-          background: linear-gradient(0, $color-gradient-start, $color-gradient-end);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+        .news-page__item-title {
+          background-size: 100% 100%;
+          color: transparent;
         }
       }
     }

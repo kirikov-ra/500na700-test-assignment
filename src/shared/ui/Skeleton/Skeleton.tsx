@@ -20,7 +20,7 @@ export const Skeleton = ({
   return (
     <div
       aria-hidden="true"
-      className={clsx(styles.skeleton, className)}
+      className={clsx(styles['skeleton'], className)}
       style={{ width, height, borderRadius, ...style }}
     />
   );
