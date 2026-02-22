@@ -26,16 +26,16 @@ export const NewsDetailPage = () => {
         <NewsDetailSkeleton />
       ) : (
         <article className={styles.article}>
-          <div className={styles['image-wrapper']}>
+          <figure className={styles['image-wrapper']}>
             <img src={newItem?.image} alt={newItem?.title} className={styles.image} />
-          </div>
+          </figure>
           <div className={styles.header}>
             <h1 className={styles.title}>{newItem?.title}</h1>
-            <div className={styles.date}>{newItem?.date}</div>
-            <div className={styles.description}>{newItem?.description}</div>
+            <time className={styles.date}>{newItem?.date}</time>
+            <p className={styles.description}>{newItem?.description}</p>
           </div>
           <div className={styles.body}>
-            <div className={styles.text}>{newItem?.content}</div>
+            <p className={styles.text}>{newItem?.content}</p>
           </div>
         </article>
       )}

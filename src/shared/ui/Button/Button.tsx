@@ -10,22 +10,11 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   ariaLabel?: string;
 };
 
-export const Button = ({
-  color = 'white',
-  disabled,
-  className,
-  children,
-  ariaLabel,
-  ...rest
-}: Props) => {
-  const isDisabled = disabled;
-
+export const Button = ({ color = 'white', children, ariaLabel, ...rest }: Props) => {
   return (
     <button
-      className={clsx(styles.button, styles[`button-${color}`], className)}
+      className={clsx(styles.button, styles[`button-${color}`])}
       aria-label={ariaLabel}
-      disabled={isDisabled}
-      aria-disabled={isDisabled}
       {...rest}
     >
       {children}

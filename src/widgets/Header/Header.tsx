@@ -15,7 +15,11 @@ export const Header = () => {
           <img src="/icons/icon.svg" alt="Логотип компании" />
         </Link>
 
-        <Button ariaLabel="Открыть форму контактов" onClick={() => setOpenModal(true)}>
+        <Button
+          ariaLabel="Открыть форму контактов"
+          onClick={() => setOpenModal(true)}
+          type="button"
+        >
           Связаться с нами
         </Button>
       </nav>

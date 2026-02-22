@@ -84,6 +84,7 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 110%;
+  text-transform: uppercase;
 
   @include down(sm) {
     margin-top: space(3);
@@ -91,6 +92,7 @@
 }
 
 .date {
+  display: block;
   opacity: 0.5;
   margin-top: space(2);
   font-weight: 400;

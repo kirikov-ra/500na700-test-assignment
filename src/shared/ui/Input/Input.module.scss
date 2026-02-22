@@ -1,20 +1,11 @@
 @use '@/shared/styles/global' as *;
 
-.input {
+.input-wrapper {
   display: flex;
   flex-direction: column;
 }
 
-.label--hidden {
-  position: absolute !important;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
-
-.field {
+.input {
   padding: 15px;
   border: 1px solid $color-black;
   border-radius: 10px;
@@ -36,14 +27,8 @@
   }
 }
 
-.field--error {
+.input-error {
   border-color: #ef4444;
-}
-
-textarea.field {
-  resize: vertical;
-  min-height: 100px;
-  resize: none;
 }
 
 .error {

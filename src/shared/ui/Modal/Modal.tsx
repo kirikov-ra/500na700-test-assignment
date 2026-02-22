@@ -21,11 +21,22 @@ export const Modal = ({ children, isOpen, onClose }: ModalProps) => {
   if (!modalRoot || !isOpen) return null;
 
   return ReactDOM.createPortal(
-    <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.wrpper}>
+    <div
+      className={styles.overlay}
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Модальное окно"
+    >
+      <div className={styles.wrapper}>
         <div className={styles.content} onClick={(e) => e.stopPropagation()}>
           {children}
-          <button className={styles['close-btn']} onClick={onClose} type="button">
+          <button
+            className={styles['close-button']}
+            onClick={onClose}
+            type="button"
+            aria-label="Закрыть"
+          >
             <img
               src="/icons/close.svg"
               alt="Иконка крестик"

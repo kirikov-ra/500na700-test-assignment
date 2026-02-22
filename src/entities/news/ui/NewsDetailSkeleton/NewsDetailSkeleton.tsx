@@ -13,7 +13,7 @@ export const NewsDetailSkeleton = () => {
       <div className={styles.header}>
         <Skeleton className={styles.title} height="48px" />
 
-        <Skeleton className={styles['date']} height="18px" width="140px" />
+        <Skeleton className={styles.date} height="18px" width="140px" />
 
         <Skeleton className={styles.description} height="24px" />
 

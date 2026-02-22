@@ -13,7 +13,7 @@ export const getNews = async (): Promise<NewsItem[]> => {
 };
 
 export const getNewsById = async (id: string): Promise<NewsItem | null> => {
-  await delay(800);
+  await delay(700);
   const response = await fetch('/data/news.json');
   if (!response.ok) {
     throw new Error('Network response was not ok');
