@@ -1,7 +1,7 @@
 import { ChangeEvent, SubmitEvent, useState } from 'react';
 import styles from './FeedbackForm.module.scss';
 import { Input } from '@/shared/ui/Input/Input';
-import { formatPhoneMask, isValidEmail } from '@/shared/ui/utils/validators';
+import { formatPhoneMask, isValidEmail } from '@/shared/utils/validators';
 import { Button } from '@/shared/ui/Button/Button';
 
 interface FeedbackFormData {
