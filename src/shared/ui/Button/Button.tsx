@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes } from 'react';
 import clsx from 'clsx';
-import styles from './button.module.scss';
+import styles from './Button.module.scss';
 
 type Color = 'white' | 'black';
 

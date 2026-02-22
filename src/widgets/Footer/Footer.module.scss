@@ -42,10 +42,6 @@
   @include down(md) {
     width: 120px;
     height: 144px;
-
-    &:nth-child(3) {
-      display: none;
-    }
   }
 }
 
@@ -59,5 +55,13 @@
 
   @include down(md) {
     font-size: 20px;
+  }
+}
+
+.empty {
+  width: 103px;
+
+  @include down(md) {
+    display: none;
   }
 }

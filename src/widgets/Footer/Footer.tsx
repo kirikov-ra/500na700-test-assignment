@@ -17,7 +17,7 @@ export const Footer = () => {
             </Link>
           </h3>
 
-          <div className={styles.logo} />
+          <div className={styles.empty} />
         </div>
       </Container>
     </footer>
