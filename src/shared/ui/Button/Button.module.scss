@@ -38,20 +38,20 @@
   }
 }
 
-.button--white {
+.button-white {
   background:
     linear-gradient(0, $color-black, $color-black) padding-box,
     $gradient border-box;
   color: $color-white;
 }
 
-.button--black {
+.button-black {
   background:
     linear-gradient(0, $color-white, $color-white) padding-box,
     $gradient border-box;
   color: $color-black;
 }
 
-.button--white:hover {
+.button-white:hover {
   color: $color-white;
 }

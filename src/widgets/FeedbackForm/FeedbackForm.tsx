@@ -86,15 +86,13 @@ export const FeedbackForm = () => {
 
   return (
     <div className={styles['feedback-form']}>
-      <h2 className={styles['feedback-form__title']}>Связаться с нами</h2>
+      <h2 className={styles.title}>Связаться с нами</h2>
 
       {isSubmitted && (
-        <div className={styles['feedback-form__success']}>
-          Спасибо! Ваше сообщение отправлено.
-        </div>
+        <div className={styles.success}>Спасибо! Ваше сообщение отправлено.</div>
       )}
 
-      <form className={styles['feedback-form__form']} onSubmit={handleSubmit} noValidate>
+      <form className={styles.form} onSubmit={handleSubmit} noValidate>
         <Input
           label="Имя"
           name="name"
@@ -119,22 +117,20 @@ export const FeedbackForm = () => {
           error={errors.email}
         />
 
-        <div className={styles['feedback-form__consent']}>
-          <label className={styles['feedback-form__checkbox-label']}>
+        <div className={styles.consent}>
+          <label className={styles['checkbox-label']}>
             <input
               type="checkbox"
               checked={formData.consent}
               onChange={handleConsentChange}
-              className={styles['feedback-form__checkbox-input']}
+              className={styles['checkbox-input']}
             />
-            <span className={styles['feedback-form__checkbox-custom']} />Я согласен (-а)
-            на обработку персональных данных
+            <span className={styles['checkbox-custom']} />Я согласен (-а) на обработку
+            персональных данных
           </label>
 
           {errors.consent && (
-            <span className={styles['feedback-form__consent-error']}>
-              {errors.consent}
-            </span>
+            <span className={styles['consent-error']}>{errors.consent}</span>
           )}
         </div>
 

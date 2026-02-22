@@ -1,6 +1,6 @@
 @use '@/shared/styles/global' as *;
 
-.news-detail__article {
+.article {
   display: grid;
   grid-template-columns: minmax(300px, 440px) minmax(300px, 500px);
   grid-template-areas:
@@ -29,7 +29,7 @@
   }
 }
 
-.news-detail__image-wrapper {
+.image-wrapper {
   grid-area: image;
   position: relative;
   aspect-ratio: 3 / 2;
@@ -42,7 +42,7 @@
   }
 }
 
-.news-detail__image {
+.image {
   @extend %transition-default;
   position: absolute;
   top: 0;
@@ -52,22 +52,22 @@
   object-fit: cover;
 }
 
-.news-detail__header {
+.header {
   grid-area: header;
 }
 
-.news-detail__body {
+.body {
   grid-area: body;
 }
 
-.news-detail__header,
-.news-detail__body {
+.header,
+.body {
   @include down(sm) {
     max-width: 100%;
     padding: 0 space(1);
   }
 }
-.news-detail__title {
+.title {
   font-weight: 600;
   font-size: 40px;
   line-height: 110%;
@@ -79,7 +79,7 @@
   }
 }
 
-.news-detail__description {
+.description {
   margin-top: space(4);
   font-weight: 600;
   font-size: 20px;
@@ -90,7 +90,7 @@
   }
 }
 
-.news-detail__date {
+.date {
   opacity: 0.5;
   margin-top: space(2);
   font-weight: 400;
@@ -102,7 +102,7 @@
   }
 }
 
-.news-detail__text {
+.text {
   margin-top: space(2);
   font-weight: 400;
   font-size: 16px;

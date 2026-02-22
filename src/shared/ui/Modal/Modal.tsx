@@ -21,11 +21,11 @@ export const Modal = ({ children, isOpen, onClose }: ModalProps) => {
   if (!modalRoot || !isOpen) return null;
 
   return ReactDOM.createPortal(
-    <div className={styles.modal__overlay} onClick={onClose}>
-      <div className={styles.modal__wrpper}>
-        <div className={styles.modal__content} onClick={(e) => e.stopPropagation()}>
+    <div className={styles.overlay} onClick={onClose}>
+      <div className={styles.wrpper}>
+        <div className={styles.content} onClick={(e) => e.stopPropagation()}>
           {children}
-          <button className={styles['modal__close-btn']} onClick={onClose} type="button">
+          <button className={styles['close-btn']} onClick={onClose} type="button">
             <img
               src="/icons/close.svg"
               alt="Иконка крестик"

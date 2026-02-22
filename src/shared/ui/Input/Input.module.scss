@@ -5,7 +5,7 @@
   flex-direction: column;
 }
 
-.input__label--hidden {
+.label--hidden {
   position: absolute !important;
   width: 1px;
   height: 1px;
@@ -14,7 +14,7 @@
   white-space: nowrap;
 }
 
-.input__field {
+.field {
   padding: 15px;
   border: 1px solid $color-black;
   border-radius: 10px;
@@ -36,17 +36,17 @@
   }
 }
 
-.input__field--error {
+.field--error {
   border-color: #ef4444;
 }
 
-textarea.input__field {
+textarea.field {
   resize: vertical;
   min-height: 100px;
   resize: none;
 }
 
-.input__error {
+.error {
   font-size: 12px;
   color: #ef4444;
 }

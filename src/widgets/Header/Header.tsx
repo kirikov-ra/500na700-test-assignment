@@ -10,8 +10,8 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <nav className={styles['header__nav']}>
-        <Link to="/" className={styles['header__logo']}>
+      <nav className={styles.nav}>
+        <Link to="/" className={styles.logo}>
           <img src="/icons/icon.svg" alt="Логотип компании" />
         </Link>
 

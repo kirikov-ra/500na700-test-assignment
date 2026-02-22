@@ -1,6 +1,6 @@
 @use '@/shared/styles/global' as *;
 
-.modal__overlay {
+.overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -13,7 +13,7 @@
   z-index: 999;
 }
 
-.modal__wrpper {
+.wrpper {
   max-width: 520px;
   width: 100%;
   display: flex;
@@ -31,13 +31,13 @@
   }
 }
 
-.modal__content {
+.content {
   position: relative;
   padding: space(4);
   max-height: fit-content;
 }
 
-.modal__close-btn {
+.close-btn {
   position: absolute;
   top: space(3);
   right: space(3);

@@ -10,15 +10,12 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 export const Input = ({ label, error, ...props }: InputProps) => {
   const id = useId();
 
-  const fieldClass = clsx(
-    styles['input__field'],
-    error ? styles['input__field--error'] : undefined,
-  );
+  const fieldClass = clsx(styles.field, error ? styles['field--error'] : undefined);
 
   return (
     <div className={styles.input}>
       {label && (
-        <label htmlFor={id} className={styles['input__label--hidden']}>
+        <label htmlFor={id} className={styles['label--hidden']}>
           {label}
         </label>
       )}
@@ -31,7 +28,7 @@ export const Input = ({ label, error, ...props }: InputProps) => {
         {...props}
       />
 
-      {error && <span className={styles['input__error']}>{error}</span>}
+      {error && <span className={styles.error}>{error}</span>}
     </div>
   );
 };

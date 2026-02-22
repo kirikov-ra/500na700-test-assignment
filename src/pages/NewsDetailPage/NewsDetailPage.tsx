@@ -12,10 +12,8 @@ export const NewsDetailPage = () => {
   if (error) {
     return (
       <Container>
-        <div className={styles['news-detail__status-error']}>
-          {error || 'Новость не найдена'}
-        </div>
-        <Link to="/" className={styles['news-detail__back-link']}>
+        <div className={styles['status-error']}>{error || 'Новость не найдена'}</div>
+        <Link to="/" className={styles['back-link']}>
           ← На главную
         </Link>
       </Container>
@@ -27,23 +25,17 @@ export const NewsDetailPage = () => {
       {loading ? (
         <NewsDetailSkeleton />
       ) : (
-        <article className={styles['news-detail__article']}>
-          <div className={styles['news-detail__image-wrapper']}>
-            <img
-              src={newItem?.image}
-              alt={newItem?.title}
-              className={styles['news-detail__image']}
-            />
+        <article className={styles.article}>
+          <div className={styles['image-wrapper']}>
+            <img src={newItem?.image} alt={newItem?.title} className={styles.image} />
           </div>
-          <div className={styles['news-detail__header']}>
-            <h1 className={styles['news-detail__title']}>{newItem?.title}</h1>
-            <div className={styles['news-detail__date']}>{newItem?.date}</div>
-            <div className={styles['news-detail__description']}>
-              {newItem?.description}
-            </div>
+          <div className={styles.header}>
+            <h1 className={styles.title}>{newItem?.title}</h1>
+            <div className={styles.date}>{newItem?.date}</div>
+            <div className={styles.description}>{newItem?.description}</div>
           </div>
-          <div className={styles['news-detail__body']}>
-            <div className={styles['news-detail__text']}>{newItem?.content}</div>
+          <div className={styles.body}>
+            <div className={styles.text}>{newItem?.content}</div>
           </div>
         </article>
       )}

@@ -22,7 +22,7 @@ export const Button = ({
 
   return (
     <button
-      className={clsx(styles['button'], styles[`button--${color}`], className)}
+      className={clsx(styles.button, styles[`button-${color}`], className)}
       aria-label={ariaLabel}
       disabled={isDisabled}
       aria-disabled={isDisabled}

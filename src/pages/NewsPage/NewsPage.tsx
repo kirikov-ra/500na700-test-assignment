@@ -10,36 +10,30 @@ export const NewsPage = () => {
   if (error)
     return (
       <Container>
-        <div className={styles['news-page__container']}>Ошибка: {error}</div>
+        <div className={styles.container}>Ошибка: {error}</div>
       </Container>
     );
 
   return (
     <Container>
-      <div className={styles['news-page__container']}>
-        <h1 className={styles['news-page__title']}>Новости</h1>
-        <div className={styles['news-page__list']}>
+      <div className={styles.container}>
+        <h1 className={styles.title}>Новости</h1>
+        <div className={styles.list}>
           {loading ? (
             Array.from({ length: 6 }).map((_, i) => <NewsCardSkeleton key={i} />)
           ) : news.length > 0 ? (
             news.map((item) => (
-              <Link
-                to={`news/${item.id}`}
-                key={item.id}
-                className={styles['news-page__item']}
-              >
-                <div className={styles['news-page__item-image-wrapper']}>
+              <Link to={`news/${item.id}`} key={item.id} className={styles['item']}>
+                <div className={styles['item-image-wrapper']}>
                   <img
                     src={item.image}
                     alt={item.title}
-                    className={styles['news-page__item-image']}
+                    className={styles['item-image']}
                   />
                 </div>
-                <h2 className={styles['news-page__item-title']}>{item.title}</h2>
-                <p className={styles['news-page__item-description']}>
-                  {item.description}
-                </p>
-                <div className={styles['news-page__item-date']}>{item.date}</div>
+                <h2 className={styles['item-title']}>{item.title}</h2>
+                <p className={styles['item-description']}>{item.description}</p>
+                <div className={styles['item-date']}>{item.date}</div>
               </Link>
             ))
           ) : (

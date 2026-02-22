@@ -1,20 +1,20 @@
 @use '@/shared/styles/global' as *;
 
-.news-page__container {
+.container {
   padding: space(6) 0;
 
   @include down(xs) {
     padding: space(4) 0;
   }
 
-  .news-page__title {
+  .title {
     font-weight: 600;
     font-size: 40px;
     line-height: 110%;
     text-transform: uppercase;
     margin-bottom: space(4);
 
-    @include down(xs) {
+    @include down(sm) {
       margin-bottom: space(3);
       margin-left: space(1);
       margin-right: space(1);
@@ -22,7 +22,7 @@
     }
   }
 
-  .news-page__list {
+  .list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: space(2);
@@ -35,15 +35,15 @@
       grid-template-columns: repeat(1, 1fr);
     }
 
-    .news-page__item {
+    .item {
       min-width: 240px;
 
-      .news-page__item-image-wrapper {
+      .item-image-wrapper {
         position: relative;
         width: 100%;
         padding-bottom: 68.18%;
 
-        .news-page__item-image {
+        .item-image {
           @extend %transition-default;
           position: absolute;
           top: 0;
@@ -54,7 +54,7 @@
         }
       }
 
-      .news-page__item-title {
+      .item-title {
         margin-top: space(2);
         font-weight: 600;
         font-size: 24px;
@@ -76,7 +76,7 @@
         }
       }
 
-      .news-page__item-description {
+      .item-description {
         margin-top: space(1);
         font-weight: 400;
         font-size: 16px;
@@ -91,7 +91,7 @@
         }
       }
 
-      .news-page__item-date {
+      .item-date {
         margin-top: space(2);
         font-weight: 400;
         font-size: 16px;
@@ -103,11 +103,11 @@
       }
 
       &:hover {
-        .news-page__item-image {
+        .item-image {
           border-radius: 20px;
         }
 
-        .news-page__item-title {
+        .item-title {
           background-size: 100% 100%;
           color: transparent;
         }
