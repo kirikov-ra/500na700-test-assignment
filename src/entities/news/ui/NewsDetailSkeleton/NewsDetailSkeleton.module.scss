@@ -1,72 +1,91 @@
 @use '@/shared/styles/global' as *;
 
-.articleSkeleton {
+.news-detail-skeleton {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: space(2);
+  grid-template-columns: minmax(300px, 440px) minmax(300px, 500px);
+  grid-template-areas:
+    'image header'
+    'image body';
+  column-gap: space(2);
   margin-top: space(8);
+
+  @include down(lg) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'image header'
+      'body body';
+  }
 
   @include down(md) {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      'image'
+      'header'
+      'body';
   }
 
   @include down(sm) {
     margin-top: space(4);
   }
+}
 
-  .imageWrapper {
-    position: relative;
-    padding-bottom: 68.18%;
-    height: 0;
+.news-detail-skeleton__image-wrapper {
+  grid-area: image;
+  position: relative;
+  aspect-ratio: 3 / 2;
+  width: 100%;
+}
 
-    .image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
+.news-detail-skeleton__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.news-detail-skeleton__header {
+  grid-area: header;
+
+  display: flex;
+  flex-direction: column;
+
+  @include down(sm) {
+    padding: 0 space(1);
+  }
+}
+
+.news-detail-skeleton__title {
+  margin-bottom: space(1);
+}
+
+.news-detail-skeleton__date {
+  margin-top: space(2);
+  margin-bottom: space(2);
+
+  @include down(sm) {
+    margin-top: space(1);
+    margin-bottom: space(1);
+  }
+}
+
+.news-detail-skeleton__description {
+  margin-top: space(1);
+}
+
+.news-detail-skeleton__body {
+  grid-area: body;
+  display: flex;
+  flex-direction: column;
+  gap: space(1);
+  margin-top: space(2);
+}
+
+.news-detail-skeleton__text-line {
+  &:nth-child(3) {
+    width: 92%;
   }
 
-  .contentWrapper {
-    display: flex;
-    flex-direction: column;
-
-    .titleLine {
-      height: 40px;
-      margin-bottom: 8px;
-
-      @include down(sm) {
-        height: 24px;
-      }
-    }
-
-    .date {
-      margin-top: space(2);
-      height: 16px;
-
-      @include down(sm) {
-        margin-top: space(1);
-      }
-    }
-
-    .textBlock {
-      margin-top: space(4);
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-
-      @include down(sm) {
-        margin-top: space(3);
-      }
-    }
-
-    .descLine {
-      height: 20px;
-    }
-
-    .contentLine {
-      height: 16px;
-    }
+  &:nth-child(4) {
+    width: 65%;
   }
 }

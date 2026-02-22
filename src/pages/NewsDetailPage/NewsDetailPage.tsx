@@ -35,12 +35,14 @@ export const NewsDetailPage = () => {
               className={styles['news-detail__image']}
             />
           </div>
-          <div className={styles['news-detail__content']}>
+          <div className={styles['news-detail__header']}>
             <h1 className={styles['news-detail__title']}>{newItem?.title}</h1>
             <div className={styles['news-detail__date']}>{newItem?.date}</div>
             <div className={styles['news-detail__description']}>
               {newItem?.description}
             </div>
+          </div>
+          <div className={styles['news-detail__body']}>
             <div className={styles['news-detail__text']}>{newItem?.content}</div>
           </div>
         </article>

@@ -1,27 +1,41 @@
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import styles from './NewsDetailSkeleton.module.scss';
 
+const BODY_LINES_COUNT = 5;
+
 export const NewsDetailSkeleton = () => {
   return (
-    <div className={styles.articleSkeleton}>
-      <div className={styles.imageWrapper}>
-        <Skeleton className={styles.image} />
+    <div className={styles['news-detail-skeleton']}>
+      <div className={styles['news-detail-skeleton__image-wrapper']}>
+        <Skeleton className={styles['news-detail-skeleton__image']} />
       </div>
-      <div className={styles.contentWrapper}>
-        <Skeleton className={styles.titleLine} />
-        <Skeleton className={styles.titleLine} width="60%" />
-        <Skeleton className={styles.date} width="100px" />
 
-        <div className={styles.textBlock}>
-          <Skeleton className={styles.descLine} />
-          <Skeleton className={styles.descLine} width="90%" />
-        </div>
+      <div className={styles['news-detail-skeleton__header']}>
+        <Skeleton className={styles['news-detail-skeleton__title']} height="48px" />
 
-        <div className={styles.textBlock}>
-          <Skeleton className={styles.contentLine} />
-          <Skeleton className={styles.contentLine} />
-          <Skeleton className={styles.contentLine} width="80%" />
-        </div>
+        <Skeleton
+          className={styles['news-detail-skeleton__date']}
+          height="18px"
+          width="140px"
+        />
+
+        <Skeleton className={styles['news-detail-skeleton__description']} height="24px" />
+
+        <Skeleton
+          className={styles['news-detail-skeleton__description']}
+          height="24px"
+          width="85%"
+        />
+      </div>
+
+      <div className={styles['news-detail-skeleton__body']}>
+        {Array.from({ length: BODY_LINES_COUNT }).map((_, i) => (
+          <Skeleton
+            key={i}
+            className={styles['news-detail-skeleton__text-line']}
+            height="18px"
+          />
+        ))}
       </div>
     </div>
   );
